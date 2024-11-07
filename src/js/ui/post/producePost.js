@@ -11,28 +11,29 @@ export const renderPosts = (userPosts, id) => {
 
     userPosts.forEach((post) => {
         const container = document.createElement("div");
-        container.className = "postContainer";
+        container.className = "bg-gray-800 shadow-lg rounded-lg overflow-hidden border border-gray-700 p-4";
 
         const title = document.createElement("h2");
         title.innerText = post.title;
-        title.className = "postTitle";
+        title.className = "text-xl font-semibold text-gray-100";
 
         const content = document.createElement("p");
         content.innerText = post.body;
+        content.className = "text-gray-400 mt-2";
 
         const imageDiv = document.createElement("div");
-        imageDiv.className = "imageDiv";
+        imageDiv.className = "mt-4";
 
         const image = document.createElement("img");
         if (post.media) {
             image.src = post.media.url;
             image.alt = post.media.alt;
         }
-        image.className = "postImage";
+        image.className = "w-full h-48 object-cover rounded-md";
 
         const viewPostBtn = document.createElement("button");
         viewPostBtn.innerText = "View Post";
-        viewPostBtn.className = "viewPostBtn";
+        viewPostBtn.className = "bg-blue-600 text-white py-2 px-4 mt-4 rounded-md hover:bg-blue-700";
         viewPostBtn.addEventListener("click", async () => {
             window.location.href = "/post/";
             localStorage.setItem("postId", JSON.stringify(post.id));

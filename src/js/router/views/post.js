@@ -44,41 +44,53 @@ const loggedInUserName = userInfo?.name;
  * @returns {void}
  */
 function displayPost(post) {
-    const postContainer = document.createElement('div');
-    postContainer.classList.add('single-post');
+    const postContainer = document.getElementById('postContainer');
+    
+    // Clear any existing content in postContainer
+    postContainer.innerHTML = '';
 
+    // Title
     const title = document.createElement('h1');
     title.textContent = post.title;
+    title.className = "text-2xl font-bold text-gray-100 mb-4";
 
-    const content = document.createElement('p');
-    content.textContent = post.body;
-   
+    // Author and Date Info
     const authorName = post.author?.name || 'Unknown Author';
     const postDate = new Date(post.created).toLocaleDateString();
-
     const metaInfo = document.createElement('div');
     metaInfo.textContent = `By ${authorName} on ${postDate}`;
+    metaInfo.className = "text-sm text-gray-400 mb-4";
 
-    postContainer.append(title, metaInfo, content);
+    // Content
+    const content = document.createElement('p');
+    content.textContent = post.body;
+    content.className = "text-gray-200 leading-relaxed mb-4";
 
     // Add media if available
     if (post.media?.url) {
         const image = document.createElement('img');
         image.src = post.media.url;
         image.alt = post.media.alt || 'Post image';
+        image.className = "w-full h-auto rounded-lg mb-4 shadow-md";
         postContainer.appendChild(image);
     }
 
+    // Append title, meta info, and content to postContainer
+    postContainer.append(title, metaInfo, content);
+
     // Add delete and edit buttons if the logged-in user is the author
     if (post.author?.name === loggedInUserName) {
+        const buttonContainer = document.createElement('div');
+        buttonContainer.className = "flex space-x-4 mt-6";
+
         const deleteButton = createDeleteButton(post.id);
         const editButton = createEditButton(post.id);
-        postContainer.appendChild(deleteButton);
-        postContainer.appendChild(editButton);
-    }
+        buttonContainer.append(deleteButton, editButton);
 
-    document.body.appendChild(postContainer);  // Append the post to the document body
+        postContainer.appendChild(buttonContainer);
+    }
 }
+
 
 /**
  * Creates a delete button for the post.
