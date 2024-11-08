@@ -8,22 +8,21 @@
 </head>
 
 <body class="min-h-screen flex flex-col items-center bg-gray-900 text-gray-300">
-  
   <header class="w-full bg-gray-800 text-gray-100 py-4">
     <div class="container mx-auto flex flex-col items-center space-y-2 md:flex-row md:justify-between md:space-y-0">
       <img src="/images/noroff-logo.png" alt="Noroff Logo" class="h-12" />
-      <nav class="my-4 flex space-x-4">
-        <a href="/" class="text-gray-400 hover:text-gray-100 font-medium">Home</a>
-        <a href="/profile/" class="text-gray-400 hover:text-gray-100 font-medium">My Profile</a>
-        <a href="/post/create/" class="text-gray-400 hover:text-gray-100 font-medium">Create</a>
-        <a href="/auth/login/" class="text-gray-400 hover:text-gray-100 font-medium">Login</a>
-        <a href="/auth/register/" class="text-gray-400 hover:text-gray-100 font-medium">Register</a>
+      <nav class="my-4 flex space-x-4 text-gray-400 hover:text-gray-100 font-medium">
+        <a href="/" class="my-4 flex space-x-4 text-gray-400 hover:text-gray-100 font-medium">Home</a>
+        <a href="/profile/" class="my-4 flex space-x-4 text-gray-400 hover:text-gray-100 font-medium">My Profile</a>
+        <a href="/post/create/" class="my-4 flex space-x-4 text-gray-400 hover:text-gray-100 font-medium">Create</a>
+        <a href="/auth/login/" class="my-4 flex space-x-4 text-gray-400 hover:text-gray-100 font-medium">Login</a>
+        <a href="/auth/register/" class="my-4 flex space-x-4 text-gray-400 hover:text-gray-100 font-medium">Register</a>
         <button id="logoutButton" class="text-red-500 hover:text-red-400 font-medium">Logout</button>
       </nav>
     </div>
   </header>
 
-  <main class="container mx-auto px-4">
+  <main class="container mx-auto px-4 mt-12">
     <div id="posts" class="grid gap-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
     </div>
   </main>
@@ -31,6 +30,5 @@
   <footer class="w-full bg-gray-800 text-gray-400 py-4 mt-8">
     <p class="text-center">&copy;Framework CA</p>
   </footer>
-
 </body>
 </html>

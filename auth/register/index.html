@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,43 +8,53 @@
   <script type="module" src="/src/app.js"></script>
 </head>
 
-<body class="min-h-screen flex items-center justify-center bg-gray-900 text-gray-300">
+<body class="min-h-screen bg-gray-900 text-gray-300">
+  <header class="w-full bg-gray-800 text-gray-100 py-4">
+    <div class="container mx-auto flex flex-col items-center space-y-2 md:flex-row md:justify-between md:space-y-0">
+      <img src="/images/noroff-logo.png" alt="Noroff Logo" class="h-12" />
+      <nav class="my-4 flex space-x-4 text-gray-400 hover:text-gray-100 font-medium">
+        <a href="/" class="my-4 flex space-x-4 text-gray-400 hover:text-gray-100 font-medium">Home</a>
+        <a href="/profile/" class="my-4 flex space-x-4 text-gray-400 hover:text-gray-100 font-medium">My Profile</a>
+        <a href="/post/create/" class="my-4 flex space-x-4 text-gray-400 hover:text-gray-100 font-medium">Create</a>
+        <a href="/auth/login/" class="my-4 flex space-x-4 text-gray-400 hover:text-gray-100 font-medium">Login</a>
+        <a href="/auth/register/" class="my-4 flex space-x-4 text-gray-400 hover:text-gray-100 font-medium">Register</a>
+        <button id="logoutButton" class="text-red-500 hover:text-red-400 font-medium">Logout</button>
+      </nav>
+    </div>
+  </header>
 
-  <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
-    <h1 class="text-3xl font-bold text-center text-gray-100 mb-6">Register</h1>
-    
-    <form name="register" class="space-y-6">
+  <main class="mt-20 flex justify-center">
+    <div class="w-full max-w-md bg-gray-800 p-8 rounded-lg shadow-lg">
+      <h1 class="text-3xl font-bold text-center text-gray-100 mb-6">Register</h1>
 
-      <div>
-        <label for="name" class="block text-sm font-medium text-gray-400">Name</label>
-        <input id="name" type="text" name="name" required maxlength="20" pattern="^[\w]+$" 
-               title="Please enter a username using only letters and numbers"
-               class="w-full px-4 py-2 mt-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
-      </div>
+      <form name="register" class="space-y-6">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-400">Name</label>
+          <input id="name" type="text" name="name" required
+            class="w-full px-4 py-2 mt-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
 
-      <div>
-        <label for="email" class="block text-sm font-medium text-gray-400">Email</label>
-        <input id="email" type="email" name="email" required pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
-               title="Please enter a valid noroff.no or stud.noroff.no address"
-               class="w-full px-4 py-2 mt-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
-      </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-400">Email</label>
+          <input id="email" type="email" name="email" required
+            class="w-full px-4 py-2 mt-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
 
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-400">Password</label>
+          <input id="password" type="password" name="password" required
+            class="w-full px-4 py-2 mt-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
 
-      <div>
-        <label for="password" class="block text-sm font-medium text-gray-400">Password</label>
-        <input id="password" type="password" name="password" required minlength="8" 
-               class="w-full px-4 py-2 mt-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
-      </div>
-
-      <div class="flex items-center justify-between">
-        <a href="/auth/login/" class="text-blue-500 hover:text-blue-400 text-sm">Login</a>
-        <button type="submit" 
-                class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-          Register
-        </button>
-      </div>
-    </form>
-  </div>
-
+        <div class="flex items-center justify-between">
+          <a href="/auth/login/" class="text-blue-500 hover:text-blue-400 text-sm">Already have an account? Login</a>
+          <button type="submit"
+            class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            Register
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
 </body>
 </html>

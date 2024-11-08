@@ -1,6 +1,6 @@
 import { API_SOCIAL_POSTS } from "../../api/constants";
 import { headers } from "../../api/headers";
-
+import { setLogoutListener } from "../../ui/global/logout";
 /**
  * Sends a request to the API to create a new post with the provided data.
  *
@@ -17,7 +17,7 @@ import { headers } from "../../api/headers";
  * @returns {Promise<Object>} - A promise that resolves to the newly created post data.
  * @throws {Error} - Throws an error if the request fails.
  */
-
+setLogoutListener();
 export async function createPost({ title, body, tags = [], media = null }) {
   try {
     const response = await fetch(API_SOCIAL_POSTS, {

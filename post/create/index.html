@@ -4,67 +4,67 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Framework CA - create</title>
+    <title>Framework CA - Create Post</title>
     <script type="module" src="/src/app.js"></script>
 </head>
 
 <body class="min-h-screen bg-gray-900 text-gray-300 flex flex-col">
-    <header class="w-full bg-gray-800 text-gray-100 py-4">
-        <div class="container mx-auto flex flex-col items-center space-y-2 md:flex-row md:justify-between md:space-y-0">
-            <img src="/images/noroff-logo.png" alt="Noroff Logo" class="h-12" />
-            <nav class="my-4 flex space-x-4">
-                <a href="/" class="text-gray-400 hover:text-gray-100 font-medium">Home</a>
-                <a href="/profile/" class="text-gray-400 hover:text-gray-100 font-medium">My Profile</a>
-                <a href="/post/create/" class="text-gray-400 hover:text-gray-100 font-medium">Create</a>
-                <a href="/auth/login/" class="text-gray-400 hover:text-gray-100 font-medium">Login</a>
-                <a href="/auth/register/" class="text-gray-400 hover:text-gray-100 font-medium">Register</a>
-                <button id="logoutButton" class="text-red-500 hover:text-red-400 font-medium">Logout</button>
-            </nav>
+  <header class="w-full bg-gray-800 text-gray-100 py-4">
+    <div class="container mx-auto flex flex-col items-center space-y-2 md:flex-row md:justify-between md:space-y-0">
+      <img src="/images/noroff-logo.png" alt="Noroff Logo" class="h-12" />
+      <nav class="my-4 flex space-x-4 text-gray-400 hover:text-gray-100 font-medium">
+        <a href="/" class="my-4 flex space-x-4 text-gray-400 hover:text-gray-100 font-medium">Home</a>
+        <a href="/profile/" class="my-4 flex space-x-4 text-gray-400 hover:text-gray-100 font-medium">My Profile</a>
+        <a href="/post/create/" class="my-4 flex space-x-4 text-gray-400 hover:text-gray-100 font-medium">Create</a>
+        <a href="/auth/login/" class="my-4 flex space-x-4 text-gray-400 hover:text-gray-100 font-medium">Login</a>
+        <a href="/auth/register/" class="my-4 flex space-x-4 text-gray-400 hover:text-gray-100 font-medium">Register</a>
+        <button id="logoutButton" class="text-red-500 hover:text-red-400 font-medium">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow mt-20">
+    <div class="w-full max-w-2xl bg-gray-800 p-8 rounded-lg shadow-lg mx-auto">
+      <h1 class="text-3xl font-bold text-gray-100 mb-6 text-center">Create Post</h1>
+      <p id="message" class="text-red-500 mb-4 text-center"></p>
+
+      <form name="createPost" class="space-y-6">
+        <div>
+          <label for="title" class="block text-sm font-medium text-gray-100">Title:</label>
+          <input type="text" id="title" name="title" required
+              class="mt-1 block w-full px-4 py-2 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
         </div>
-    </header>
-    <main class="flex-grow flex items-center justify-center py-8">
-        <div class="w-full max-w-2xl bg-gray-800 p-8 rounded-lg shadow-lg">
-            <h1 class="text-3xl font-bold text-gray-100 mb-6 text-center">Create Post</h1>
-            <p id="message" class="text-red-500 mb-4 text-center"></p>
 
-            <form name="createPost" class="space-y-6">
-                <div>
-                    <label for="title" class="block text-sm font-medium text-gray-100">Title:</label>
-                    <input type="text" id="title" name="title" required
-                        class="mt-1 block w-full px-4 py-2 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-                </div>
-
-                <div>
-                    <label for="body" class="block text-sm font-medium text-gray-100">Body:</label>
-                    <textarea id="body" name="body" required rows="4"
-                        class="mt-1 block w-full px-4 py-2 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
-                </div>
-
-                <div>
-                    <label for="tags" class="block text-sm font-medium text-gray-100">Tags:</label>
-                    <input type="text" id="tags" name="tags" required
-                        class="mt-1 block w-full px-4 py-2 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-                </div>
-
-                <div>
-                    <label for="mediaUrl" class="block text-sm font-medium text-gray-100">Media URL:</label>
-                    <input type="url" id="mediaUrl" name="mediaUrl"
-                        class="mt-1 block w-full px-4 py-2 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-                </div>
-
-                <div>
-                    <label for="mediaAlt" class="block text-sm font-medium text-gray-100">Media Alt Text:</label>
-                    <input type="text" id="mediaAlt" name="mediaAlt"
-                        class="mt-1 block w-full px-4 py-2 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-                </div>
-
-                <div>
-                    <button type="submit"
-                        class="w-full px-4 py-2 rounded-lg bg-blue-600 text-gray-100 font-semibold hover:bg-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none">Create
-                        Post</button>
-                </div>
-            </form>
+        <div>
+          <label for="body" class="block text-sm font-medium text-gray-100">Body:</label>
+          <textarea id="body" name="body" required rows="4"
+              class="mt-1 block w-full px-4 py-2 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
         </div>
-    </main>
+
+        <div>
+          <label for="tags" class="block text-sm font-medium text-gray-100">Tags:</label>
+          <input type="text" id="tags" name="tags" required
+              class="mt-1 block w-full px-4 py-2 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+        </div>
+
+        <div>
+          <label for="mediaUrl" class="block text-sm font-medium text-gray-100">Media URL:</label>
+          <input type="url" id="mediaUrl" name="mediaUrl"
+              class="mt-1 block w-full px-4 py-2 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+        </div>
+
+        <div>
+          <label for="mediaAlt" class="block text-sm font-medium text-gray-100">Media Alt Text:</label>
+          <input type="text" id="mediaAlt" name="mediaAlt"
+              class="mt-1 block w-full px-4 py-2 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+        </div>
+
+        <div>
+          <button type="submit"
+              class="w-full px-4 py-2 rounded-lg bg-blue-600 text-gray-100 font-semibold hover:bg-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none">Create Post</button>
+        </div>
+      </form>
+    </div>
+  </main>
 </body>
 </html>
