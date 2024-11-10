@@ -91,7 +91,6 @@ function displayPost(post) {
     }
 }
 
-
 /**
  * Creates a delete button for the post.
  * 
@@ -102,6 +101,7 @@ function createDeleteButton(postId) {
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'Delete';
     deleteButton.dataset.postId = postId; 
+    deleteButton.className = 'bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500';
     deleteButton.addEventListener('click', onDeletePost);  // Attach delete event
     return deleteButton;
 }
@@ -115,6 +115,7 @@ function createDeleteButton(postId) {
 function createEditButton(postId) {
     const editButton = document.createElement('button');
     editButton.textContent = 'Edit';
+    editButton.className = 'bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500';
     editButton.addEventListener('click', async () => {
         localStorage.setItem('postId', JSON.stringify(postId));  // Store postId for editing
         window.location.href = `/post/edit/?id=${postId}`;  // Redirect to edit page

@@ -2,16 +2,39 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
+    <title>Framework CA - Profile</title>
     <script type="module" src="/src/app.js"></script>
   </head>
-  <body>
-    <h1>Profile</h1>
+  <body class="min-h-screen flex flex-col bg-gray-900 text-gray-300">
+    <header class="w-full bg-gray-800 text-gray-100 py-4">
+      <div class="container mx-auto flex flex-col items-center space-y-2 md:flex-row md:justify-between md:space-y-0">
+        <img src="/images/noroff-logo.png" alt="Noroff Logo" class="h-12" />
+        <nav class="my-4 flex space-x-4 text-gray-400 hover:text-gray-100 font-medium">
+          <a href="/" class="my-4 text-gray-400 hover:text-gray-100">Home</a>
+          <a href="/profile/" class="my-4 text-gray-400 hover:text-gray-100">My Profile</a>
+          <a href="/post/create/" class="my-4 text-gray-400 hover:text-gray-100">Create</a>
+          <a href="/auth/login/" class="my-4 text-gray-400 hover:text-gray-100">Login</a>
+          <a href="/auth/register/" class="my-4 text-gray-400 hover:text-gray-100">Register</a>
+          <button id="logoutButton" class="text-red-500 hover:text-red-400 font-medium">Logout</button>
+        </nav>
+      </div>
+    </header>
 
-    <form name="updateProfile">
-      <button>Update Profile</button>
-    </form>
+    <main class="flex-grow flex flex-col items-center justify-center p-4">
+      <div class="w-full max-w-lg bg-gray-800 p-8 rounded-lg shadow-lg">
+        <h1 class="text-3xl font-bold text-center text-gray-100 mb-6">My Profile</h1>
+
+        <form name="updateProfile" class="space-y-6">
+          <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            Update Profile
+          </button>
+        </form>
+      </div>
+    </main>
+
+    <footer class="w-full bg-gray-800 text-gray-400 py-4 mt-auto">
+      <p class="text-center">&copy;Framework CA</p>
+    </footer>
   </body>
 </html>
